@@ -1,0 +1,257 @@
+:root {
+    --light-clr: #F2F2F2;
+    --white-clr: #fff;
+    --fw-reg: 400;
+    --fw-medium: 500;
+    --fw-bold: 700;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'League Spartan', sans-serif;
+    display: grid;
+    place-items: center;
+    background: var(--light-clr);
+}
+
+/* General */
+
+h1 {
+    margin: 0;
+}
+
+.introduction__title {
+    color: #512051;
+    font-size: 2.5rem;
+    line-height: 2rem;
+    letter-spacing: -0.08931rem;
+}
+
+.introduction__description {
+    width: 95%;
+    color: #927B91;
+    font-size: 1.1875rem;
+    font-weight: var(--fw-medium);
+    line-height: 1.5625rem;
+    letter-spacing: -0.03956rem;
+    margin-bottom: 0;
+}
+
+.rated__text {
+    color: #512051;
+    font-size: 1.0625rem;
+    font-weight: var(--fw-bold);
+}
+
+.card__image {
+    grid-area: i;
+    width: 40px;
+    border-radius: 50%;
+}
+
+/* Layouts */
+
+.container {
+    width: 100%;
+    min-width: 375px;
+    max-width: 1440px;;
+}
+
+.main {
+    background: var(--white-clr);
+    padding: 5.1em 1.5em 6.2em;
+    display: grid;
+    grid-template-areas: 
+        "i"
+        "r"
+        "c";
+}
+
+.introduction {
+    grid-area: i;
+    text-align: center;
+}
+
+.rates-wrapper {
+    grid-area: r;
+    margin-top: 2.44em;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.rates {
+    background-color: #F7F2F7;
+    text-align: center;
+    padding: 1em 0;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rates:nth-child(2) {
+    margin-block: 1em;
+}
+
+.stars-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: .5em;
+    margin-bottom: .95em;
+}
+
+.stars-wrapper > img {
+    width: 16.55px;
+}
+
+.card-section {
+    grid-area: c;
+    margin-top: 3.06em;
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    flex: 1;
+    background-color: #512051;
+    color: var(--white-clr);
+    padding: 2.5em 2em 2.2em;
+    border-radius: 8px;
+}
+
+.card:nth-child(2) {
+    margin-block: 1em;
+}
+
+.card__buyer-wrapper {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    grid-template-areas: 
+        "i b"
+        "i v";
+    align-items: center;
+    column-gap: 1.44em;
+}
+
+.card__buyer {
+    grid-area: b;
+    font-size: 1.0625rem;
+    font-weight: var(--fw-bold);
+}
+
+.card__verified-buyer {
+    grid-area: v;
+    color: #EE69A4;
+    font-size: 1.0625rem;
+    font-weight: var(--fw-reg);
+}
+
+.card__description {
+    font-size: 1.0625rem;
+    font-weight: var(--fw-medium);
+    line-height: 1.375rem;
+    letter-spacing: -0.019rem;
+    margin-bottom: 0;
+}
+
+/* Footer */
+
+.footer {
+    background: #F2F2F2;
+    opacity: .9;
+    padding: 2em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* Media Queries */
+
+@media (min-width: 750px) {
+}
+
+@media (min-width: 900px) {
+    .introduction__title {
+        color: #512051;
+        font-size: 3.5rem;
+        line-height: 3rem;
+        letter-spacing: -0.125rem;
+    }
+
+    .main {
+        gap: 4.44em;
+        padding: 7.38em 10.31em 8.25em;
+        align-items: center;
+        grid-template-areas:
+            "i r"
+            "c c";
+    }
+
+    .introduction {
+        width: 90%;
+        text-align: start;
+    }
+
+    .stars-wrapper {
+        margin-bottom: 0;
+    }
+
+    .card-section {
+        flex-direction: row;
+        margin-top: 0;
+        /* outline: 1px solid red; */
+    }
+    
+    .card:nth-child(2) {
+        margin-block: 0;
+        transform: translateY(1em);
+        margin-inline: 1.88em;
+        top: 1em;
+    }
+
+    .card:nth-child(3) {
+        transform: translateY(2em);
+    }
+
+    .rates-wrapper {
+        margin-top: 0;
+        align-items: center;
+        /* outline: 1px solid red; */
+    }
+
+    .rates {
+        width: 80%;
+        flex-direction: row;
+        gap: 2em;
+        padding: 1.26em 2.9em 1.26em 2em;
+    }
+
+    .rates:nth-child(1) {
+        margin-right: auto;
+    }
+
+    .rates:nth-child(3) {
+        margin-left: auto;
+    }
+
+}
